@@ -365,27 +365,60 @@ body {
   text-transform: uppercase;
   font-style: normal;
 }
-.sv-media-bar { margin-top: 36px; text-align: center; }
+.sv-media-bar { margin-top: 48px; }
 .sv-media-label {
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-weight: 600;
-  color: var(--grey);
-  margin-bottom: 14px;
+  font-weight: 700;
+  color: var(--pink);
+  text-align: center;
+  margin-bottom: 20px;
 }
-.sv-media-logos {
+.sv-marquee-outer {
+  overflow: hidden;
+  background: var(--pink-pale);
+  border-top: 1px solid var(--pink-soft);
+  border-bottom: 1px solid var(--pink-soft);
+  padding: 22px 0;
+  position: relative;
+}
+.sv-marquee-outer::before,
+.sv-marquee-outer::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.sv-marquee-outer::before { left: 0; background: linear-gradient(to right, var(--pink-pale), transparent); }
+.sv-marquee-outer::after  { right: 0; background: linear-gradient(to left, var(--pink-pale), transparent); }
+.sv-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: sv-scroll 18s linear infinite;
+}
+.sv-marquee-track:hover { animation-play-state: paused; }
+@keyframes sv-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.sv-marquee-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
+  padding: 0 56px;
 }
-.sv-media-logos span {
-  font-family: var(--serif);
-  font-size: 14px;
-  font-weight: 700;
-  color: #AAA;
+.sv-marquee-item img {
+  height: 36px;
+  width: auto;
+  opacity: 0.75;
+  filter: grayscale(1);
+  transition: opacity 0.3s, filter 0.3s;
+}
+.sv-marquee-item img:hover {
+  opacity: 1;
+  filter: grayscale(0);
 }
 
 /* ─── CALL STEPS ─── */
@@ -739,10 +772,15 @@ body {
 
     <div class="sv-media-bar">
       <p class="sv-media-label">As seen in</p>
-      <div class="sv-media-logos">
-        <span>Hindustan Times</span>
-        <span>The Indian Express</span>
-        <span>GQ India</span>
+      <div class="sv-marquee-outer">
+        <div class="sv-marquee-track">
+          <div class="sv-marquee-item"><img src="hindustantimeslogo.png" alt="Hindustan Times"></div>
+          <div class="sv-marquee-item"><img src="indianexpresslogo.png" alt="The Indian Express"></div>
+          <div class="sv-marquee-item"><img src="GQlogo.png" alt="GQ India"></div>
+          <div class="sv-marquee-item"><img src="hindustantimeslogo.png" alt="Hindustan Times"></div>
+          <div class="sv-marquee-item"><img src="indianexpresslogo.png" alt="The Indian Express"></div>
+          <div class="sv-marquee-item"><img src="GQlogo.png" alt="GQ India"></div>
+        </div>
       </div>
     </div>
   </div>
