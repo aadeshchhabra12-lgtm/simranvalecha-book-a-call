@@ -365,7 +365,7 @@ body {
   text-transform: uppercase;
   font-style: normal;
 }
-.sv-media-bar { margin-top: 48px; }
+.sv-media-bar { margin: 40px 0 0; }
 .sv-media-label {
   font-size: 11px;
   letter-spacing: 0.15em;
@@ -377,10 +377,8 @@ body {
 }
 .sv-marquee-outer {
   overflow: hidden;
-  background: var(--pink-pale);
-  border-top: 1px solid var(--pink-soft);
-  border-bottom: 1px solid var(--pink-soft);
-  padding: 22px 0;
+  background: transparent;
+  padding: 16px 0;
   position: relative;
 }
 .sv-marquee-outer::before,
@@ -392,8 +390,8 @@ body {
   z-index: 2;
   pointer-events: none;
 }
-.sv-marquee-outer::before { left: 0; background: linear-gradient(to right, var(--pink-pale), transparent); }
-.sv-marquee-outer::after  { right: 0; background: linear-gradient(to left, var(--pink-pale), transparent); }
+.sv-marquee-outer::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+.sv-marquee-outer::after  { right: 0; background: linear-gradient(to left, var(--white), transparent); }
 .sv-marquee-track {
   display: flex;
   width: max-content;
@@ -410,7 +408,7 @@ body {
   padding: 0 56px;
 }
 .sv-marquee-item img {
-  height: 36px;
+  height: 54px;
   width: auto;
   opacity: 0.75;
   filter: grayscale(1);
@@ -629,6 +627,20 @@ body {
     </div>
   </div>
 
+  <div class="sv-media-bar">
+    <p class="sv-media-label">As seen in</p>
+    <div class="sv-marquee-outer">
+      <div class="sv-marquee-track">
+        <div class="sv-marquee-item"><img src="hindustantimeslogo.png" alt="Hindustan Times"></div>
+        <div class="sv-marquee-item"><img src="indianexpresslogo.png" alt="The Indian Express"></div>
+        <div class="sv-marquee-item"><img src="GQlogo.png" alt="GQ India"></div>
+        <div class="sv-marquee-item"><img src="hindustantimeslogo.png" alt="Hindustan Times"></div>
+        <div class="sv-marquee-item"><img src="indianexpresslogo.png" alt="The Indian Express"></div>
+        <div class="sv-marquee-item"><img src="GQlogo.png" alt="GQ India"></div>
+      </div>
+    </div>
+  </div>
+
   <a href="https://calendly.com/simran-simvalecha/30min" target="_blank" class="sv-cta-btn">Yes — Book My Free Call →</a>
   <p class="sv-cta-micro">30 minutes. No obligation. We'll tell you honestly if we can help.</p>
 </section>
@@ -770,19 +782,6 @@ body {
       <cite>— Shivani, Jan 2024</cite>
     </div>
 
-    <div class="sv-media-bar">
-      <p class="sv-media-label">As seen in</p>
-      <div class="sv-marquee-outer">
-        <div class="sv-marquee-track">
-          <div class="sv-marquee-item"><img src="hindustantimeslogo.png" alt="Hindustan Times"></div>
-          <div class="sv-marquee-item"><img src="indianexpresslogo.png" alt="The Indian Express"></div>
-          <div class="sv-marquee-item"><img src="GQlogo.png" alt="GQ India"></div>
-          <div class="sv-marquee-item"><img src="hindustantimeslogo.png" alt="Hindustan Times"></div>
-          <div class="sv-marquee-item"><img src="indianexpresslogo.png" alt="The Indian Express"></div>
-          <div class="sv-marquee-item"><img src="GQlogo.png" alt="GQ India"></div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
